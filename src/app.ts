@@ -2,7 +2,6 @@ import express from 'express';
 const logger = require('morgan');
 const cors = require('cors');
 require('dotenv').config();
-//import { IStatusRespose } from 'types/response';
 
 const ticketsRouter = require('./routes/api/tickets');
 
