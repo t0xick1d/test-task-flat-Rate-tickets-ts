@@ -1,4 +1,5 @@
-import { GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql';
+import { GraphQLList, GraphQLObjectType, GraphQLSchema, GraphQLString } from 'graphql';
+const { Ticket } = require('../models/tickets');
 
 const Tickets = new GraphQLObjectType({
   name: 'Tickets',
@@ -7,8 +8,18 @@ const Tickets = new GraphQLObjectType({
       type: GraphQLString,
     },
     allplace: {
-      type: GraphQLString,
+      type: new GraphQLList(PlaceType),
     },
+  }),
+});
+
+const PlaceType = new GraphQLObjectType({
+  name: 'Place',
+  fields: () => ({
+    section: { type: GraphQLString },
+    row: { type: GraphQLString },
+    seatnumber: { type: GraphQLString },
+    price: { type: GraphQLString },
   }),
 });
 
@@ -18,7 +29,9 @@ const Query = new GraphQLObjectType({
     tickets: {
       type: Tickets,
       args: { id: { type: GraphQLString } },
-      resolve(parent: any, args: any) {},
+      resolve(parent: any, args: any) {
+        return Ticket.findById(args.id);
+      },
     },
   },
 });
