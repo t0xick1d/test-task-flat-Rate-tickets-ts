@@ -10,4 +10,4 @@
 # Unfortunately. I had no experience with GraphQL. And I`m not so sure that this is the right decision. 
 # But I'm attaching a screenshot of how I did it 
 
-![Alt text](https://monosnap.com/file/NhsLcdmiFL6e1eMgZzB3uctJmTVeXJ)
+<img width="1440" alt="Task 1" src="https://monosnap.com/file/NhsLcdmiFL6e1eMgZzB3uctJmTVeXJ">
