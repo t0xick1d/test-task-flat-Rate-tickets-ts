@@ -1,10 +1,10 @@
-import { ErrorWithStatus } from "types/errorTypes";
+import ErrorWithStatus from 'types/errorTypes';
 
-type ErrorMessagesType = { 
-  [x: number ] : string
-}
+type ErrorMessagesType = {
+  [x: number]: string;
+};
 
-const errorMessageList : ErrorMessagesType = {
+const errorMessageList: ErrorMessagesType = {
   400: 'Bad request',
   401: 'Email or password is wrong',
   403: 'Forbidden',
